@@ -1,3 +1,5 @@
+require 'set'
+
 class GraphNode
     attr_accessor :val, :neighbors
 
@@ -8,13 +10,19 @@ class GraphNode
 end
 
 def bfs(starting_node, target_value)
-    return nil if queued.empty?
-    return starting_node if starting_node.val == target_value
+    queue = [starting_node]
+    visited = Set.new()
 
-    queued = [starting_node]
-    next_node = queued.shift
-    queued += next_node.neighbors
-    bfs(next_node, target_value)
+    until queue.empty?
+        node = queue.shift
+        if !visited.include?(node)
+            return node.val if node.val == target_value
+            visited.add(node)
+            queue += node.neighbors
+        end
+    end
+
+    return nil
 end
 
 
@@ -29,4 +37,4 @@ c.neighbors = [b, d]
 e.neighbors = [a]
 f.neighbors = [e]
 
-p bfs(a, "b")
+p bfs(a, "f")
