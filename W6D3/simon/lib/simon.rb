@@ -2,6 +2,7 @@
 
 class Simon
   COLORS = %w(red blue green yellow)
+  
   SUCCESS = ["Well done. Let's keep going...",
     "Okay, I see you. Here's another...",
     "Quite the memory on you. Try this...",
