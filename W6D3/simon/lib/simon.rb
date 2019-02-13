@@ -1,7 +1,13 @@
-#TO PLAY JUST RUN 'ruby simon.rb'
+#TO PLAY RUN 'ruby simon.rb'
 
 class Simon
   COLORS = %w(red blue green yellow)
+  SUCCESS = ["Well done. Let's keep going...",
+    "Okay, I see you. Here's another...",
+    "Quite the memory on you. Try this...",
+    "Impressive. How far can you go?",
+    "Correct!",
+    "Not bad, but it gets harder..."]
 
   attr_accessor :sequence_length, :game_over, :seq
 
@@ -54,7 +60,7 @@ class Simon
   end
 
   def round_success_message
-    puts "Well done. Let's keep going..."
+    puts SUCCESS.sample
   end
 
   def game_over_message
