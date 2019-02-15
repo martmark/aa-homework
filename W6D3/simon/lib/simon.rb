@@ -24,7 +24,6 @@ class Simon
       self.game_over_message
       self.reset_game
     end
-    
   end
 
   def take_turn
@@ -75,5 +74,5 @@ class Simon
   end
 end
 
-new = Simon.new
-new.play
+# new = Simon.new
+# new.play
