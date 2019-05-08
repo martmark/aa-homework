@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  nginx:
+    build:
+      context: .
+    image: martmark/nginx
+    ports:
+      - 80:80
